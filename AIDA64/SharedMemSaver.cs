@@ -66,12 +66,12 @@ namespace AIDA64
                 handle = OpenFileMapping(FILE_MAP_READ, false, sharedMemFile);
                 if (handle == IntPtr.Zero)
                 {
-                    throw new Exception("Unable to open file mapping.");
+                    throw new Exception("Unable to open Aida64 mapping.");
                 }
                 map = MapViewOfFile(handle, FILE_MAP_READ, 0, 0, 0);
                 if (map == IntPtr.Zero)
                 {
-                    throw new Exception("Unable to read shared memory.");
+                    throw new Exception("Unable to read Aida64 shared memory.");
                 }
                 fileOpen = true;
             }
